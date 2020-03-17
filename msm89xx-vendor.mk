@@ -12,5 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := $(call my-dir)
+
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/msm89xx
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/vendor,$(TARGET_COPY_OUT_VENDOR))
